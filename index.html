@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Игра на память</title>
+        <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#110f22">
     <style>
         /* --- СБРОС СТИЛЕЙ И ШРИФТЫ --- */
         * {
@@ -386,6 +388,13 @@
     // Запуск игры при загрузке
     initGame();
 
+</script>
+   <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker зарегистрирован!'))
+      .catch((err) => console.log('Ошибка регистрации: ', err));
+  }
 </script>
 </body>
 </html>
